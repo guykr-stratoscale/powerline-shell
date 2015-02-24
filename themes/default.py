@@ -10,10 +10,10 @@ class DefaultColor:
     HOSTNAME_FG = 250
     HOSTNAME_BG = 238
 
-    HOME_SPECIAL_DISPLAY = True
+    HOME_SPECIAL_DISPLAY = False
     HOME_BG = 31  # blueish
     HOME_FG = 15  # white
-    PATH_BG = 237  # dark grey
+    PATH_BG = 240  # dark grey
     PATH_FG = 250  # light grey
     CWD_FG = 254  # nearly-white grey
     SEPARATOR_FG = 244
@@ -21,13 +21,23 @@ class DefaultColor:
     READONLY_BG = 124
     READONLY_FG = 254
 
+    ENV_BG = 70
+    ENV_FG = 15
+    NO_ENV_BG = 110
+    NO_ENV_FG = 0
+
     SSH_BG = 166 # medium orange
     SSH_FG = 254
 
-    REPO_CLEAN_BG = 148  # a light green color
-    REPO_CLEAN_FG = 0  # black
-    REPO_DIRTY_BG = 161  # pink/red
-    REPO_DIRTY_FG = 15  # white
+    REPO_CLEAN_BG = 236  # a light green color
+    REPO_CLEAN_FG = 410  # black
+    REPO_DIRTY_BG = 236  # pink/red
+    REPO_DIRTY_FG = 452  # white
+    REPO_BG = 236  # pink/red
+    REPO_FG = 250  # white
+
+    TIME_BG = 31 #4
+    TIME_FG = 254 #254
 
     JOBS_FG = 39
     JOBS_BG = 238

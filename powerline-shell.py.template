@@ -14,18 +14,21 @@ class Powerline:
             'lock': 'RO',
             'network': 'SSH',
             'separator': u'\u25B6',
+            'branch': '',
             'separator_thin': u'\u276F'
         },
         'patched': {
             'lock': u'\uE0A2',
             'network': u'\uE0A2',
             'separator': u'\uE0B0',
+            'branch': u'\uE0A0',
             'separator_thin': u'\uE0B1'
         },
         'flat': {
             'lock': '',
             'network': '',
             'separator': '',
+            'branch': '',
             'separator_thin': ''
         },
     }
@@ -45,6 +48,7 @@ class Powerline:
         self.lock = Powerline.symbols[mode]['lock']
         self.network = Powerline.symbols[mode]['network']
         self.separator = Powerline.symbols[mode]['separator']
+        self.branch = Powerline.symbols[mode]['branch']
         self.separator_thin = Powerline.symbols[mode]['separator_thin']
         self.segments = []
 
@@ -58,8 +62,9 @@ class Powerline:
         return self.color('48', code)
 
     def append(self, content, fg, bg, separator=None, separator_fg=None):
-        self.segments.append((content, fg, bg, separator or self.separator,
-            separator_fg or bg))
+	if separator is None:
+		separator = self.separator
+        self.segments.append((content, fg, bg, separator, separator_fg or bg))
 
     def draw(self):
         return (''.join(self.draw_segment(i) for i in range(len(self.segments)))

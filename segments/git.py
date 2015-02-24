@@ -1,4 +1,5 @@
 import re
+import os
 import subprocess
 
 def get_git_status():
@@ -31,12 +32,13 @@ def add_git_segment():
 
     if 'Not a git repo' in err:
         return
-
+    
+    branch_icon = '%s ' % powerline.branch
     if out:
         branch = out[len('refs/heads/'):].rstrip()
     else:
         branch = '(Detached)'
-
+  
     has_pending_commits, has_untracked_files, origin_position = get_git_status()
     branch += origin_position
     if has_untracked_files:
@@ -48,7 +50,9 @@ def add_git_segment():
         bg = Color.REPO_DIRTY_BG
         fg = Color.REPO_DIRTY_FG
 
-    powerline.append(' %s ' % branch, fg, bg)
+    powerline.append(' %s' % branch_icon, fg, bg, separator='')
+    powerline.append('%s ' % branch, Color.REPO_FG, Color.REPO_BG)
+
 
 try:
     add_git_segment()
