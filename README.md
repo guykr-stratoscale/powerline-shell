@@ -95,9 +95,9 @@ Redefine `fish_prompt` in ~/.config/fish/config.fish:
 
 # Fonts
 Download the latest version of the symbol font and fontconfig file:
-
-	wget https://github.com/guykr-stratoscale/powerline-shell/fonts/PowerlineSymbols.otf
-	wget https://github.com/guykr-stratoscale/powerline-shell/fonts/10-powerline-symbols.conf
+	
+	wget https://github.com/guykr-stratoscale/powerline-shell/raw/master/fonts/10-powerline-symbols.conf 
+	wget https://github.com/guykr-stratoscale/powerline-shell/raw/master/fonts/PowerlineSymbols.otf
 
 Move the symbol font to a valid X font path. Valid font paths can be listed with xset q:
 
