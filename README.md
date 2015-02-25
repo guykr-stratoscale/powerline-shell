@@ -92,7 +92,12 @@ Redefine `fish_prompt` in ~/.config/fish/config.fish:
             ~/powerline-shell.py $status --shell bare ^/dev/null
         end
 
+
+# Fonts
+Install fonts from: http://powerline.readthedocs.org/en/latest/installation/linux.html
+
 # Customization
+
 
 ### Adding, Removing and Re-arranging segments
 
