@@ -94,7 +94,23 @@ Redefine `fish_prompt` in ~/.config/fish/config.fish:
 
 
 # Fonts
-Install fonts from: http://powerline.readthedocs.org/en/latest/installation/linux.html
+Download the latest version of the symbol font and fontconfig file:
+
+	wget https://github.com/guykr-stratoscale/powerline-shell/fonts/PowerlineSymbols.otf
+	wget https://github.com/guykr-stratoscale/powerline-shell/fonts/10-powerline-symbols.conf
+
+Move the symbol font to a valid X font path. Valid font paths can be listed with xset q:
+
+	mv PowerlineSymbols.otf ~/.fonts/
+
+Update font cache for the path the font was moved to (root priveleges may be needed to update cache for the system-wide paths):
+
+	fc-cache -vf ~/.fonts/
+
+Install the fontconfig file. For newer versions of fontconfig the config path is `~/.config/fontconfig/conf.d/`, for older versions it’s `~/.fonts.conf.d/`:
+
+	mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+
 
 # Customization
 
