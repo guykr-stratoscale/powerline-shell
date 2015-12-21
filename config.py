@@ -27,6 +27,9 @@ SEGMENTS = [
 # directory
     'read_only',
 
+# npm version
+    'nvm',
+
 # Show the current git branch and status
     'git',
 
