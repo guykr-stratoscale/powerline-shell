@@ -21,7 +21,7 @@ def get_git_status():
         if origin_status[0][0] == 'ahead':
             status += UP_SIGN
 
-    diverged = re.findall(r"and have (\d+) and (\d+) different commit each", output)
+    diverged = re.findall(r"and have (\d+) and (\d+) different commit(s)? each", output)
     if diverged:
         status = " %s%s%s" % (diverged[0][0], UPDOWN_SIGN, diverged[0][1])
 
